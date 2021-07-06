@@ -101,25 +101,29 @@ class CalcFrame(calc_gui.MyFrame1):
         y = x.split("+")
         if len(y) == 2:
             ans = str((float(y[0]) + float(y[1])))
-            self.input_box.SetValue(ans)
+            ans_ers = ans[:-2]
+            self.input_box.SetValue(ans_ers)
         else:
             pass
         y = x.split("-")
         if len(y) == 2:
             ans = str((float(y[0]) - float(y[1])))
-            self.input_box.SetValue(ans)
+            ans_ers = ans[:-2]
+            self.input_box.SetValue(ans_ers)
         else:
             pass
         y = x.split("*")
         if len(y) == 2:
             ans = str((float(y[0]) * float(y[1])))
-            self.input_box.SetValue(ans)
+            ans_ers = ans[:-2]
+            self.input_box.SetValue(ans_ers)
         else:
             pass
         y = x.split("/")
         if len(y) == 2:
             ans = str((float(y[0]) / float(y[1])))
-            self.input_box.SetValue(ans)
+            ans_ers = ans[:-2]
+            self.input_box.SetValue(ans_ers)
         else:
             pass
         
