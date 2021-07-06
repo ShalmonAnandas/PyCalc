@@ -16,31 +16,3 @@ mypy_report/
 *.spec
 *.egg-info
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-*.srt
-*.ttml
-*.sbv
-*.vtt
-*.flv
-*.mp4
-*.m4a
-*.m4v
-*.mp3
-*.3gp
-*.wav
-*.ape
-*.mkv
-*.swf
-*.part
-*.exe

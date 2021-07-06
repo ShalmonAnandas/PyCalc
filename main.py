@@ -1,6 +1,6 @@
 import wx 
 import calc_gui
-import os 
+import re
 
 
 
@@ -20,39 +20,48 @@ class CalcFrame(calc_gui.MyFrame1):
 
     def input_divide( self, event ):
         x = str(self.input_box.GetValue())
-        y = x.split(" / ")
+        y = x.split("/")
         if len(y) == 1:
-            self.input_box.AppendText(" / ")
+            self.input_box.AppendText("/")
         else:
-            self.input_box.SetValue(str(float(y[0]) / float(y[1])))
-            self.input_box.AppendText(" / ")
+            a = (str(float(y[0]) / float(y[1])))
+            b = a[:-2]
+            self.input_box.SetValue(b)
+            self.input_box.AppendText("/")
 
     def input_multiply( self, event ):
         x = str(self.input_box.GetValue())
-        y = x.split(" * ")
+        y = x.split("*")
         if len(y) == 1:
-            self.input_box.AppendText(" * ")
+            self.input_box.AppendText("*")
         else:
-            self.input_box.SetValue(str(float(y[0]) * float(y[1])))
-            self.input_box.AppendText(" * ")
+            a = (str(float(y[0]) * float(y[1])))
+            b = a[:-2]
+            self.input_box.SetValue(b)
+            self.input_box.AppendText("*")
 
     def input_add( self, event ):
         x = str(self.input_box.GetValue())
-        y = x.split(" + ")
+        y = x.split("+")
         if len(y) == 1:
-            self.input_box.AppendText(" + ")
+            self.input_box.AppendText("+")
         else:
-            self.input_box.SetValue(str(float(y[0]) + float(y[1])))
-            self.input_box.AppendText(" + ")
+            a = (str(float(y[0]) + float(y[1])))
+            b = a[:-2]
+            self.input_box.SetValue(b)
+            self.input_box.AppendText("+")
+        
 
     def input_subtract( self, event ):
         x = str(self.input_box.GetValue())
-        y = x.split(" - ")
+        y = x.split("-")
         if len(y) == 1:
-            self.input_box.AppendText(" - ")
+            self.input_box.AppendText("-")
         else:
-            self.input_box.SetValue(str(float(y[0]) - float(y[1])))
-            self.input_box.AppendText(" - ")
+            a = (str(float(y[0]) - float(y[1])))
+            b = a[:-2]
+            self.input_box.SetValue(b)
+            self.input_box.AppendText("-")
 
     def input_1( self, event ):
         self.input_box.AppendText("1")
@@ -89,24 +98,28 @@ class CalcFrame(calc_gui.MyFrame1):
 
     def isequal( self, event ):
         x = str(self.input_box.GetValue())
-        y = x.split(" + ")
+        y = x.split("+")
         if len(y) == 2:
-            self.input_box.SetValue(str((float(y[0]) + float(y[1]))))
+            ans = str((float(y[0]) + float(y[1])))
+            self.input_box.SetValue(ans)
         else:
             pass
-        y = x.split(" - ")
+        y = x.split("-")
         if len(y) == 2:
-            self.input_box.SetValue(str((float(y[0]) - float(y[1]))))
+            ans = str((float(y[0]) - float(y[1])))
+            self.input_box.SetValue(ans)
         else:
             pass
-        y = x.split(" * ")
+        y = x.split("*")
         if len(y) == 2:
-            self.input_box.SetValue(str((float(y[0]) * float(y[1]))))
+            ans = str((float(y[0]) * float(y[1])))
+            self.input_box.SetValue(ans)
         else:
             pass
-        y = x.split(" / ")
+        y = x.split("/")
         if len(y) == 2:
-            self.input_box.SetValue(str((float(y[0]) / float(y[1]))))
+            ans = str((float(y[0]) / float(y[1])))
+            self.input_box.SetValue(ans)
         else:
             pass
         
