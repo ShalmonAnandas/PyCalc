@@ -5,5 +5,5 @@ A calculator written in python. Made to teach myself
 
 ## Known Bugs
 1. Negative numbers dont work
-2. multiple operators in a single calculation dont work
+2. Multiple operators in a single calculation dont work
 
